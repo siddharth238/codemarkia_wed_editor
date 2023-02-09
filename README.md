@@ -26,7 +26,10 @@ I have take the reference HTML, CSS AND JAVSSCRIPT codes from W3SCHOOLS.COM
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/62851444/217785863-2241218b-c630-4887-a912-0065cfec3b29.png)
+![image](https://user-images.githubusercontent.com/62851444/217903092-eb2e9fdb-7d7a-48b8-82ca-75fba38281e0.png)
+![image](https://user-images.githubusercontent.com/62851444/217903708-7c084292-c4d3-4687-b4ee-73f8272e5894.png)
+![image](https://user-images.githubusercontent.com/62851444/217903758-dca0f375-4a0e-4af5-a214-c74654d2b1db.png)
+![image](https://user-images.githubusercontent.com/62851444/217903826-574a30f4-af64-42d8-a247-e7a68e038485.png)
 
 ![image](https://user-images.githubusercontent.com/62851444/217779635-9e4886a3-e0a8-4548-9a16-fa826c6ef2bd.png)
 
