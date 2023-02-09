@@ -1,0 +1,66 @@
+.editor-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  
+}
+
+.inputs-container {
+  width: 35%;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 0;
+  background-image: url("https://img.freepik.com/free-vector/white-abstract-wallpaper_23-2148830026.jpg?w=2000");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.input1 {
+  width: 100%;
+   
+  
+  padding: 20px;
+  
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+   
+  
+}
+
+ 
+
+.preview-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+   
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+   
+}
+ .right-container{
+  display: flex;
+  flex-direction: column;
+  
+  width: 70%;
+ }
+ .nav-link{
+  margin: 1rem;
+ }
