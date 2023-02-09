@@ -1,17 +1,21 @@
 import Editor from './Editorpage/Editor'
 import SavedProjectsPage from './Project/Project'
 import React, { useState } from 'react';
- 
+import { auth } from './firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+import Login from './Login/Login';
 import {
     BrowserRouter as Router,
     Switch,
     Route } from "react-router-dom";
 const App = () => {
-   
+  const [user, loading] = useAuthState(auth);
 
   return (
    
-         <Router>
+         <Router>{
+          !user?(<Login/>):(
             <Switch >
             <Route path="/" exact>
                 
@@ -24,7 +28,7 @@ const App = () => {
                   <Editor />
                   </Route>
                  
-      </Switch>
+      </Switch>)}
     </Router>
      
      )

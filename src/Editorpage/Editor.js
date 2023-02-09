@@ -6,17 +6,18 @@ import UpdateIcon from '@mui/icons-material/Update';
 import { useParams } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import './Editor.css'
-import db from '../firebase';
+import {db} from '../firebase';
 import Input from '@mui/material/Input';
 import TextField from '@mui/material/TextField';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firebase';
 const IndexPage = () => {
   const [html, setHtml] = useState('');
   const [css, setCss] = useState('');
   const [javascript, setJavascript] = useState('');
   const [projectName, setProjectName] = useState('');
   const { id } = useParams();
-
+  const [user] = useAuthState(auth)
   useEffect(() => {
     if (id) {
       db.collection('projects')
@@ -36,21 +37,27 @@ const IndexPage = () => {
   const handleSave = () => {
     if (id) {
       db.collection("projects").doc(id).update({
-        html,
-        css,
-        javascript,
-        projectName,
-        timeStamp: firebase.firestore.FieldValue.serverTimestamp()
+        html:html,
+        css:css,
+        javascript:javascript,
+        projectname:projectName,
+        
+        timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+        user: user.displayName,
+      userImage: user.photoURL
 
       });
     } 
     else if(html && css ||javascript && projectName) {
       db.collection("projects").add({
-        html,
-        css,
-        javascript,
-        projectName,
+        html:html,
+        css:css,
+        javascript:javascript,
+        projectname:projectName,
+        
         timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+        user: user.displayName,
+      userImage: user.photoURL
       });
     }
   };
@@ -64,32 +71,32 @@ const IndexPage = () => {
 
           <TextField
             style={{marginBottom:20}}
-            placeholder="Write your HTML..."
+            placeholder="HTML goes here..."
             className='input1'
             value={html}
             id="standard-multiline-static"
             label="HTML"
             multiline
-            rows={9}
+            rows={8}
             defaultValue="Default Value"
             variant="standard"
             onChange={(e) => setHtml(e.target.value)}
           />
           <TextField
-            placeholder="Write your CSS..."
+            placeholder="CSS goes here..."
             className='input1'
             style={{marginBottom:20}}
             value={css}
             id="standard-multiline-static"
             label="CSS"
             multiline
-            rows={9}
+            rows={8}
             defaultValue="Default Value"
             variant="standard"
             onChange={(e) => setCss(e.target.value)}
           />
           <TextField
-            placeholder="Write your JAVASCRIPT..."
+            placeholder="JAVASCRIPT goes here..."
             className='input1'
 
             value={javascript}
@@ -97,7 +104,7 @@ const IndexPage = () => {
             id="standard-multiline-static"
             label="JAVASCRIPT"
             multiline
-            rows={9}
+            rows={8}
             defaultValue="Default Value"
             variant="standard"
             onChange={(e) => setJavascript(e.target.value)}

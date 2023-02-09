@@ -9,8 +9,8 @@
   }
   
   .navbar-title {
-    margin: 0;
-    font-size: 1.5rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
   }
   
   .navbar-nav {
@@ -21,7 +21,7 @@
   }
   
   .nav-item {
-    margin-left: 1rem;
+    
   }
   
   .nav-link {
@@ -37,4 +37,9 @@
     color: black;
    
   }
- 
+ .navbar-name{
+  display: flex;
+   
+   
+  align-items: center;
+ }

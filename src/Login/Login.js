@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
-import firebase from 'firebase';
+import React from 'react';
+import styled from 'styled-components';
+import Button from '@mui/material/Button';
+import { auth, provider } from '../firebase';
+import GoogleIcon from '@mui/icons-material/Google';
+import './Login.css'
+export default function Login() {
+  const signIn = (e)=>{
+    e.preventDefault();
+    auth.signInWithPopup(provider).catch((error)=>
+      alert(error.messages)
+    )
 
-const Login = () => {
-  const [user, setUser] = useState(null);
-
-  const handleLogin = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-        setUser(result.user);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  }
 
   return (
-    <div>
-      {user ? (
-        <>
-          <p>Welcome, {user.displayName}!</p>
-          <button onClick={() => firebase.auth().signOut()}>Sign out</button>
-        </>
-      ) : (
-        <>
-          <p>Please sign in:</p>
-          <button onClick={handleLogin}>Sign in with Google</button>
-        </>
-      )}
+    <div className='login'>
+      <div className='login-container'>
+      <div className='login-container-l'>
+        <h1>Hey👋, I'm Siddharth Pampana</h1>
+        <div>
+        <h2>Welcome to live compiler</h2>
+        <p>Place where you can save, view, update and edit the Html, Css and Js code on realtime</p></div>
+      </div>
+      <div className='login-container-r'>
+         
+         
+         <img onClick={signIn} className='login-img' src='https://www.drupal.org/files/issues/2020-01-26/google_logo.png' />  
+        
+      </div>
+      </div>
     </div>
-  );
-};
-
-export default Login;
+  )
+}
+ 
