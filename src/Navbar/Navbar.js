@@ -8,7 +8,7 @@ import CodeIcon from '@mui/icons-material/Code';
 const Navbar = ({savebtn}) => {
   return (
     <nav className="navbar">
-      <h1 className="navbar-title">Codemarkia</h1>
+      <h1 className="navbar-title">Codemarkias</h1>
       <ul className="navbar-nav">
        
         <li className="nav-item">
