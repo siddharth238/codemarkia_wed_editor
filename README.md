@@ -20,6 +20,10 @@ Clone the repository to your local machine.
 ```
 Open your browser and navigate to http://localhost:3000/ to view the project.
 Note: The development server will automatically reload the page whenever you make changes to the code.
+
+## Note
+I have take the reference HTML, CSS AND JAVSSCRIPT codes from W3SCHOOLS.COM
+
 ## Screenshots
 
 ![image](https://user-images.githubusercontent.com/62851444/217779635-9e4886a3-e0a8-4548-9a16-fa826c6ef2bd.png)
